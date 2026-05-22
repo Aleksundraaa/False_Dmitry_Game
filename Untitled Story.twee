@@ -1,5 +1,5 @@
 :: StoryTitle
-Лжедмитрий I: Путь к престолуy
+Лжедмитрий I: Путь к престолу
 
 :: StoryData
 {
@@ -10,36 +10,26 @@
   "zoom": 1
 }
 
-:: Start {"position":"500,100"}
-(set: $polaks to 50)(set: $orthodox to 50)(set: $boyars to 50)
+:: Start {"position":"500,100","size":"100,100"}
+(set: $polaks to 50)(set: $orthodox to 50)(set: $boyars to 50)(set:$ShuiskyAlive to true)
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 Ты — Гришка Отрепьев. Год 1604. Ты в Польше и готовишься объявить себя чудесно спасшимся царевичем Дмитрием. Иезуиты предлагают тебе тайную сделку.
 
 [[Принять католичество (Тайный обет)|Act1ObetA]]
 [[Отказаться, настаивать на православной вере|Act1ObetB]]
 
-:: Act1ObetA {"position":"400,225"}
-(set: $polaks to $polaks + 20)(set: $orthodox to $orthodox - 10)
-<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
-Ты тайно принял католичество. Ты получил золото и поддержку, но слухи об этом уже ползут на Русь, отталкивая народ.
+<div class="year">март 1604</div>
 
-[[Перейти к контракту с Мнишеками|Act1Mnishki]]
-
-:: Act1ObetB {"position":"600,225"}
-(set: $polaks to $polaks - 10)(set: $orthodox to $orthodox + 10)
-<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
-Ты отказался от католичества. Поляки дали меньше денег, но на границе тебя воспринимают как истинно русского царевича.
-
-[[Перейти к контракту с Мнишеками|Act1Mnishki]]
-
-:: Act1Mnishki {"position":"500,350"}
+:: Act1Mnishki {"position":"500,350","size":"100,100"}
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 Контракт с Мнишеками. Теперь ты — жених Марины Мнишек. Перед походом на Москву нужно договориться о награде для польских спонсоров.
 
 [[Обещать Смоленск и Северские земли|Act1MnishkiAStrong]]
 [[Торговаться, обещая выплаты только после коронации|Act1MnishkiBWeak]]
 
-:: Act1MnishkiAStrong {"position":"350,475"}
+<div class="year">май 1604</div>
+
+:: Act1MnishkiAStrong {"position":"350,475","size":"100,100"}
 (set: $polaks to $polaks + 30)
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 Ты пообещал раздать русские земли. Ты получил огромную армию, но в Москве тебя уже считают ставленником Польши.
@@ -47,7 +37,9 @@
 [[Идти на Чернигов|Act2ChernigovStrong]]
 [[Идти через казачьи земли|Act2KazakiStrong]]
 
-:: Act1MnishkiBWeak {"position":"650,475"}
+<div class="year">май 1604</div>
+
+:: Act1MnishkiBWeak {"position":"650,475","size":"100,100"}
 (set: $polaks to $polaks - 10)(set: $boyars to $boyars + 10)
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 Армия стала меньше, но ты сохранил лицо. Бояре с интересом наблюдают за тобой.
@@ -55,141 +47,184 @@
 [[Идти на Чернигов|Act2ChernigovWeak]]
 [[Идти через казачьи земли|Act2KazakiWeak]]
 
-:: Act2ChernigovStrong {"position":"200,600"}
+<div class="year">май 1604</div>
+
+:: Act1ObetA {"position":"400,225","size":"100,100"}
+(set: $polaks to $polaks + 20)(set: $orthodox to $orthodox - 10)
+<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
+Ты тайно принял католичество. Ты получил золото и поддержку, но слухи об этом уже ползут на Русь, отталкивая народ.
+
+[[Перейти к контракту с Мнишеками|Act1Mnishki]]
+
+<div class="year">апрель 1604</div>
+
+:: Act1ObetB {"position":"600,225","size":"100,100"}
+(set: $polaks to $polaks - 10)(set: $orthodox to $orthodox + 10)
+<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
+Ты отказался от католичества. Поляки дали меньше денег, но на границе тебя воспринимают как истинно русского царевича.
+
+[[Перейти к контракту с Мнишеками|Act1Mnishki]]
+
+<div class="year">апрель 1604</div>
+
+:: Act2ChernigovBribe {"position":"500,750","size":"100,100"}
+(set: $boyars to $boyars - 15)
+<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
+Бояре взяли золото, но казна пуста. Твой авторитет среди элиты падает.
+[[Битва при Добрыничах|Act2Dobrynichi]]
+
+<div class="year">октябрь 1604</div>
+
+:: Act2ChernigovGramoty {"position":"350,750","size":"100,100"}
+(set: $orthodox to $orthodox + 25)(set: $boyars to $boyars - 15)
+<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
+Народ радостно открывает ворота, но бояре в ужасе от твоих обещаний "воли".
+[[Битва при Добрыничах|Act2Dobrynichi]]
+
+<div class="year">октябрь 1604</div>
+
+:: Act2ChernigovStorm {"position":"200,750","size":"100,100"}
+(set: $orthodox to $orthodox - 20)(set: $boyars to $boyars - 10)
+<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
+Город пал, но кровь на твоих руках оттолкнула русский народ.
+[[Битва при Добрыничах|Act2Dobrynichi]]
+
+<div class="year">октябрь 1604</div>
+
+:: Act2ChernigovStrong {"position":"200,600","size":"100,100"}
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 Осада Чернигова. Твоя армия огромна.
 
 [[Разослать «Прелестные грамоты»|Act2ChernigovGramoty]]
 [[Штурмовать город силой|Act2ChernigovStorm]]
 
-:: Act2ChernigovWeak {"position":"500,600"}
+<div class="year">октябрь 1604</div>
+
+:: Act2ChernigovWeak {"position":"500,600","size":"100,100"}
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
-Осада Чернигова. Твоих сил не хватает для прямого удара.
+Нужно взять Чернигов. Твоих сил не хватает для прямого удара.
 
 [[Разослать «Прелестные грамоты»|Act2ChernigovGramoty]]
 [[Подкупить воевод|Act2ChernigovBribe]]
 
-:: Act2KazakiStrong {"position":"350,600"}
-<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
-Казаки предлагают союз, но требуют вольностей.
+<div class="year">октябрь 1604</div>
 
-[[Обещать казакам самоуправление|Act2KazakiFree]]
-[[Подчинить их силой польского оружия|Act2KazakiForce]]
-
-:: Act2KazakiWeak {"position":"800,600"}
-<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
-Ты слаб, и казаки предлагают тебе стать их лидером.
-
-[[Обещать казакам самоуправление|Act2KazakiFree]]
-[[Ограничить их влияние|Act2KazakiLimit]]
-
-:: Act2ChernigovGramoty {"position":"350,750"}
-(set: $orthodox to $orthodox + 25)(set: $boyars to $boyars - 15)
-<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
-Народ радостно открывает ворота, но бояре в ужасе от твоих обещаний "воли".
-[[Битва при Добрыничах|Act2Dobrynichi]]
-
-:: Act2ChernigovStorm {"position":"200,750"}
-(set: $orthodox to $orthodox - 20)(set: $boyars to $boyars - 10)
-<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
-Гогород пал, но кровь на твоих руках оттолкнула русский народ.
-[[Битва при Добрыничах|Act2Dobrynichi]]
-
-:: Act2ChernigovBribe {"position":"500,750"}
-(set: $boyars to $boyars - 15)
-<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
-Бояре взяли золото, но казна пуста. Твой авторитет среди элиты падает.
-[[Битва при Добрыничах|Act2Dobrynichi]]
-
-:: Act2KazakiFree {"position":"650,750"}
-(set: $orthodox to $orthodox + 20)(set: $boyars to $boyars - 10)
-<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
-Казаки присягнули тебе. Народная поддержка растет.
-[[Битва при Добрыничах|Act2Dobrynichi]]
-
-:: Act2KazakiForce {"position":"800,750"}
-(set: $polaks to $polaks + 10)(set: $orthodox to $orthodox - 20)
-<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
-Казачье восстание подавлено. Поляки одобряют твою жесткость, но народ тебя боится.
-[[Битва при Добрыничах|Act2Dobrynichi]]
-
-:: Act2KazakiLimit {"position":"950,750"}
-(set: $orthodox to $orthodox - 10)(set: $boyars to $boyars + 10)
-<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
-Ты дистанцировался от казаков. Бояре довольны, что ты не опираешься на "чернь".
-[[Битва при Добрыничах|Act2Dobrynichi]]
-
-:: Act2Dobrynichi {"position":"500,900"}
+:: Act2Dobrynichi {"position":"500,900","size":"100,100"}
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 Битва при Добрыничах оборачивается катастрофой. Войска несут огромные потери.
 
 [[Отступить в Путивль и собрать новые силы|Act3Marfa]]
 [[Трусливо бежать в Польшу|EndingCoward]]
 
-:: EndingCoward {"position":"700,900"}
-<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
-Слухи о твоем трусливом бегстве разнеслись по всей Руси. Поход окончен. 
-Досрочный финал: «Бесславный крах».
-[[Начать заново|Start]]
+<div class="year">21(31) января1605</div>
 
-:: Act3Marfa {"position":"500,1050"}
+:: Act2KazakiForce {"position":"800,750","size":"100,100"}
+(set: $polaks to $polaks + 10)(set: $orthodox to $orthodox - 20)
+<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
+Казачье восстание подавлено. Поляки одобряют твою жесткость, но народ тебя боится.
+[[Битва при Добрыничах|Act2Dobrynichi]]
+
+<div class="year">октябрь 1604</div>
+
+:: Act2KazakiFree {"position":"650,750","size":"100,100"}
+(set: $orthodox to $orthodox + 20)(set: $boyars to $boyars - 10)
+<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
+Казаки присягнули тебе. Народная поддержка растет.
+[[Битва при Добрыничах|Act2Dobrynichi]]
+<div class="year">октябрь1604</div>
+
+:: Act2KazakiLimit {"position":"950,750","size":"100,100"}
+(set: $orthodox to $orthodox - 10)(set: $boyars to $boyars + 10)
+<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
+Ты дистанцировался от казаков. Бояре довольны, что ты не опираешься на "чернь".
+[[Битва при Добрыничах|Act2Dobrynichi]]
+
+<div class="year">октябрь 1604</div>
+
+:: Act2KazakiStrong {"position":"350,600","size":"100,100"}
+<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
+Казаки предлагают союз, но требуют вольностей.
+
+[[Обещать казакам самоуправление|Act2KazakiFree]]
+[[Подчинить их силой польского оружия|Act2KazakiForce]]
+
+<div class="year">октябрь 1604</div>
+
+:: Act2KazakiWeak {"position":"800,600","size":"100,100"}
+<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
+Ты слаб, и казаки предлагают тебе стать их лидером.
+
+[[Обещать казакам самоуправление|Act2KazakiFree]]
+[[Ограничить их влияние|Act2KazakiLimit]]
+
+<div class="year">октябрь 1604</div>
+
+:: Act3Marfa {"position":"500,1050","size":"100,100"}
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 Очная ставка с инокиней Марфой (матерью настоящего царевича). От её слова зависит твоя легитимность.
 
 [[Упасть в ноги, покаяться и дать щедрые обещания|Act3MarfaKajus]]
 [[Угрожать ей расправой и заточением|Act3MarfaThreat]]
 
-:: Act3MarfaKajus {"position":"350,1175"}
+:: Act3MarfaKajus {"position":"350,1175","size":"100,100"}
 (set: $orthodox to $orthodox + 30)
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 Она публично признает в тебе сына! Москва ликует.
 [[Раскрыт заговор Шуйского|Act3Shuisky]]
 
-:: Act3MarfaThreat {"position":"650,1175"}
+:: Act3MarfaThreat {"position":"650,1175","size":"100,100"}
 (set: $orthodox to $orthodox - 20)(set: $boyars to $boyars - 10)
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 Она признала тебя из страха. Слухи о твоей жестокости подорвали веру народа.
 [[Раскрыт заговор Шуйского|Act3Shuisky]]
 
-:: Act3Shuisky {"position":"500,1300"}
+:: Act3Shuisky {"position":"500,1300","size":"100,100"}
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 Василий Шуйский распускает слухи, что ты самозванец. Заговор раскрыт.
 
 [[Помиловать и отправить в ссылку (исторично)|Act3ShuiskyExile]]
 [[Казнить предателя|Act3ShuiskyExecute]]
 
-:: Act3ShuiskyExile {"position":"350,1425"}
-(set: $boyars to $boyars - 30)(set: $ShuiskyAlive to true)
-<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
-Шуйский выжил и затаил обиду. Бояре считают тебя слабым.
-[[Свадьба с Мариной Мнишек|Act4Wedding]]
-
-:: Act3ShuiskyExecute {"position":"650,1425"}
+:: Act3ShuiskyExecute {"position":"650,1425","size":"100,100"}
 (set: $boyars to $boyars - 20)(set: $ShuiskyAlive to false)
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 Голова Шуйского летит с плеч. Бояре в ужасе, но заговор подавлен.
 [[Свадьба с Мариной Мнишек|Act4Wedding]]
 
-:: Act4Wedding {"position":"500,1550"}
+:: Act3ShuiskyExile {"position":"350,1425","size":"100,100"}
+(set: $boyars to $boyars - 30)(set: $ShuiskyAlive to true)
+<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
+Шуйский выжил и затаил обиду. Бояре считают тебя слабым.
+[[Свадьба с Мариной Мнишек|Act4Wedding]]
+
+:: Act4Wedding {"position":"500,1550","size":"100,100"}
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 Май 1606 года. Твоя свадьба с полячкой Мариной Мнишек — последняя капля для русского общества. Что ты выберешь на пиру?
 
 [[Соблюдать польский этикет (вилки, танцы, католические гости)|Act4WeddingPolish]]
 [[Настоять на русских православных традициях|Act4WeddingRussian]]
 
-:: Act4WeddingPolish {"position":"350,1675"}
+:: Act4WeddingPolish {"position":"350,1675","size":"100,100"}
 (set: $polaks to $polaks + 20)(set: $orthodox to $orthodox - 30)(set: $boyars to $boyars - 30)
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 Поляки бесчинствуют в Москве. Народ и бояре в ярости от заносчивости интервентов.
 [[Узнать свою судьбу|EndingFinal]]
 
-:: Act4WeddingRussian {"position":"650,1675"}
+:: Act4WeddingRussian {"position":"650,1675","size":"100,100"}
 (set: $orthodox to $orthodox + 30)(set: $polaks to $polaks - 30)
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 Марина вынуждена надеть русский наряд. Поляки оскорблены, но москвичи искренне одобряют твой шаг.
 [[Узнать свою судьбу|EndingFinal]]
 
-:: EndingFinal {"position":"500,1800"}
+:: EndingCoward {"position":"700,900","size":"100,100"}
+<div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
+Слухи о твоем трусливом бегстве разнеслись по всей Руси. Поход окончен. 
+Досрочный финал: «Бесславный крах».
+[[Начать заново|Start]]
+
+<div class="year">1605</div>
+
+:: EndingFinal {"position":"500,1800","size":"100,100"}
 <div class="stats">Итог: Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 (if: $ShuiskyAlive is true and $boyars < 30)[
     Ты венчался на царство, но боярская дума кипит от ненависти. Шуйский воспользовался этим: ночью зазвонил набат. В Кремль ворвалась толпа. Твои телохранители убиты, а сам ты пытался бежать, но сорвался с лесов. Твой прах смешали с порохом и выстрелили в сторону Польши.
@@ -233,6 +268,20 @@ tw-story {
     font-weight: bold;
     margin-bottom: 30px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+}
+.year {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 160%;
+    font-weight: bold;
+    color: #ffd700;
+    opacity: 0.5;
+    font-family: monospace;
+    letter-spacing: 4px;
+    pointer-events: none;
 }
 tw-link {
     color: #ff4500;
