@@ -122,7 +122,7 @@
 [[Отступить в Путивль и собрать новые силы|Act2GodunovDeath]]
 [[Трусливо бежать в Польшу|EndingCoward]]
 
-<div class="year">21(31) января1605</div>
+<div class="year">21(31) января 1605</div>
 
 
 :: Act2GodunovDeath {"position":"500,1175","size":"100,100"}
@@ -152,7 +152,7 @@
 Казаки присягнули тебе. Народная поддержка растет.
 [[Битва при Добрыничах|Act2Dobrynichi]]
 
-<div class="year">октябрь1604</div>
+<div class="year">октябрь 1604</div>
 
 
 :: Act2KazakiLimit {"position":"950,750","size":"100,100"}
@@ -211,7 +211,7 @@
 [[Упасть в ноги, покаяться и дать щедрые обещания|Act3MarfaKajus]]
 [[Угрожать ей расправой и заточением|Act3MarfaThreat]]
 
-<div class="year">18 июля1605</div>
+<div class="year">18 июля 1605</div>
 
 
 :: Act3MarfaKajus {"position":"350,1475","size":"100,100"}
@@ -220,7 +220,7 @@
 Она публично признает в тебе сына! Москва ликует.
 [[Раскрыт заговор Шуйского|Act3Shuisky]]
 
-<div class="year">18 июля1605</div>
+<div class="year">18 июля 1605</div>
 
 
 :: Act3MarfaThreat {"position":"650,1475","size":"100,100"}
@@ -229,7 +229,7 @@
 Она признала тебя из страха. Слухи о твоей жестокости подорвали веру народа.
 [[Раскрыт заговор Шуйского|Act3Shuisky]]
 
-<div class="year">18 июля1605</div>
+<div class="year">18 июля 1605</div>
 
 
 :: Act3Shuisky {"position":"500,1600","size":"100,100"}
@@ -337,6 +337,8 @@
 :: StoryStylesheet [stylesheet]
 tw-story {
     min-height: 100vh;
+    box-sizing: border-box;
+    overflow-x: hidden;
     color: #f1e6d0;
     font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
     font-size: 170%;
@@ -394,6 +396,7 @@ tw-passage {
     pointer-events: none;
     text-transform: uppercase;
     text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    z-index: 2;
 }
 tw-link {
     display: block;
@@ -409,7 +412,8 @@ tw-link {
     transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     box-shadow: 0 6px 16px rgba(0,0,0,0.22);
 }
-tw-link:hover {
+tw-link:hover,
+tw-link.visited:hover {
     transform: translateY(-2px);
     border-color: rgba(255, 220, 150, 0.56);
     background: linear-gradient(180deg, rgba(95, 63, 36, 0.98), rgba(61, 36, 22, 0.98));
@@ -420,6 +424,7 @@ tw-link:hover {
 tw-link:active {
     transform: translateY(0);
 }
+tw-link.visited,
 tw-link:visited,
 tw-link:focus,
 tw-link:focus-visible {
@@ -430,11 +435,4 @@ tw-passage br {
 }
 tw-passage p {
     margin: 0 0 1em;
-}
-tw-story a {
-    color: inherit;
-}
-tw-story div[style*="position: fixed"],
-tw-story .year {
-    z-index: 2;
 }
