@@ -68,7 +68,6 @@
 (set: $boyars to $boyars - 15)
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 Бояре взяли золото, но казна пуста. Твой авторитет среди элиты падает.
-[Act2NovgorodSeversky]
 [[Битва при Добрыничах|Act2Dobrynichi]]
 [[Взять Новгород-Северский ->Act2NovgorodSeversky]]
 
