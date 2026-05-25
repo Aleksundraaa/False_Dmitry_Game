@@ -326,7 +326,7 @@
 :: Start {"position":"500,100","size":"100,100"}
 (set: $polaks to 50)(set: $orthodox to 50)(set: $boyars to 50)(set:$ShuiskyAlive to true)
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
-Ты — Гришка Отрепьев. Год 1604. Ты в Польше и готовишься объявить себя чудесно спасшимся царевичем Дмитрием. Иезуиты предлагают тебе тайную сделку.
+Ты — Гришка Отрепьев. Сейчас ты в Польше и готовишься объявить себя чудесно спасшимся царевичем Дмитрием. Иезуиты предлагают тебе тайную сделку.
 
 [[Принять католичество (Тайный обет)|Act1ObetA]]
 [[Отказаться, настаивать на православной вере|Act1ObetB]]
@@ -336,43 +336,105 @@
 
 :: StoryStylesheet [stylesheet]
 tw-story {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
+    min-height: 100vh;
+    color: #f1e6d0;
     font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
     font-size: 170%;
-    line-height: 1.6;
-    padding: 50px;
+    line-height: 1.7;
+    padding: 48px 24px 88px;
+    background:
+        radial-gradient(circle at top, rgba(129, 92, 52, 0.28), transparent 34%),
+        linear-gradient(180deg, rgba(14, 12, 10, 0.92), rgba(24, 17, 14, 0.96)),
+        url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80') center/cover fixed;
+    background-blend-mode: screen, normal, normal;
+    position: relative;
+}
+tw-story::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 8, 7, 0.68), rgba(10, 8, 7, 0.82));
+    pointer-events: none;
+}
+tw-passage {
+    position: relative;
+    z-index: 1;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 34px 36px 88px;
+    background: linear-gradient(180deg, rgba(34, 24, 20, 0.88), rgba(20, 14, 12, 0.92));
+    border: 1px solid rgba(214, 181, 132, 0.24);
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
 }
 .stats {
-    background-color: #2d241e;
-    border: 1px solid #8b0000;
-    padding: 15px;
-    border-radius: 8px;
-    color: #ffd700;
+    background: linear-gradient(180deg, rgba(70, 43, 29, 0.95), rgba(41, 26, 20, 0.95));
+    border: 1px solid rgba(199, 160, 104, 0.45);
+    padding: 12px 16px;
+    border-radius: 14px;
+    color: #f0d68b;
     text-align: center;
     font-weight: bold;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    margin-bottom: 28px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+    letter-spacing: 0.02em;
 }
 .year {
     position: fixed;
-    bottom: 20px;
+    bottom: 18px;
     left: 0;
     right: 0;
     text-align: center;
-    font-size: 160%;
+    font-size: 128%;
     font-weight: bold;
-    color: #ffd700;
-    opacity: 0.5;
+    color: rgba(240, 214, 139, 0.72);
     font-family: monospace;
-    letter-spacing: 4px;
+    letter-spacing: 0.2em;
     pointer-events: none;
+    text-transform: uppercase;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 tw-link {
-    color: #ff4500;
-    transition: 0.3s;
+    display: inline-block;
+    margin: 8px 10px 0 0;
+    padding: 13px 15px;
+    max-width: 720px;
+    width: auto;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(74, 48, 29, 0.95), rgba(50, 31, 20, 0.95));
+    border: 1px solid rgba(240, 214, 139, 0.28);
+    color: #ffe3b0;
+    text-decoration: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.22);
 }
 tw-link:hover {
-    color: #ffa500;
-    text-shadow: 0 0 5px #ff4500;
+    transform: translateY(-2px);
+    border-color: rgba(255, 220, 150, 0.56);
+    background: linear-gradient(180deg, rgba(95, 63, 36, 0.98), rgba(61, 36, 22, 0.98));
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+    text-shadow: 0 0 10px rgba(255, 218, 130, 0.22);
+    color: #ffe9bd;
+}
+tw-link:active {
+    transform: translateY(0);
+}
+tw-link:visited,
+tw-link:focus,
+tw-link:focus-visible {
+    color: #ffe3b0;
+}
+tw-passage br {
+    display: none;
+}
+tw-passage p {
+    margin: 0 0 1em;
+}
+tw-story a {
+    color: inherit;
+}
+tw-story div[style*="position: fixed"],
+tw-story .year {
+    z-index: 2;
 }
