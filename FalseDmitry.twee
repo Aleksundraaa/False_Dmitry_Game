@@ -14,7 +14,7 @@
 
 :: Act1Mnishki {"position":"500,350","size":"100,100"}
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
-Контракт с Мнишеками. Теперь ты — жених Марины Мнишек. Перед походом на Москву нужно договориться о награде для польских спонсоров.
+Контракт с Мнишеками. Теперь ты жених Марины Мнишек. Перед походом на Москву нужно договориться о награде для польских спонсоров.
 
 [[Обещать Смоленск и Северские земли|Act1MnishkiAStrong]]
 [[Торговаться, обещая выплаты только после коронации|Act1MnishkiBWeak]]
@@ -129,7 +129,7 @@
 <div class="stats">Поляки: $polaks | Православные: $orthodox | Бояре: $boyars</div>
 
 13 апреля 1605 года. Внезапно умирает царь Борис Годунов.
-Преемником стал его сын — Фёдор, но он был убит в ходе мятежа.
+Преемником стал его сын Фёдор, но он был убит в ходе мятежа.
 Это переломило ситуацию.
 
 [[Войти в Москву|Act3Marfa]]
@@ -396,15 +396,15 @@ tw-passage {
     text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 tw-link {
-    display: inline-block;
-    margin: 8px 10px 0 0;
+    display: block;
+    margin: 8px 0 0;
     padding: 13px 15px;
-    max-width: 720px;
-    width: auto;
+    width: 100%;
+    box-sizing: border-box;
     border-radius: 14px;
     background: linear-gradient(180deg, rgba(74, 48, 29, 0.95), rgba(50, 31, 20, 0.95));
     border: 1px solid rgba(240, 214, 139, 0.28);
-    color: #ffe3b0;
+    color: #f0d68b;
     text-decoration: none;
     transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     box-shadow: 0 6px 16px rgba(0,0,0,0.22);
@@ -423,7 +423,7 @@ tw-link:active {
 tw-link:visited,
 tw-link:focus,
 tw-link:focus-visible {
-    color: #ffe3b0;
+    color: #f0d68b;
 }
 tw-passage br {
     display: none;
